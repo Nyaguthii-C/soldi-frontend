@@ -12,7 +12,7 @@ export default function Navbar(){
 
 <span className="navbar-brand">
 
-💰 Expense Tracker
+Soldi Expense Tracker
 
 </span>
 
