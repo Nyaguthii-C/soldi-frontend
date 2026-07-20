@@ -3,10 +3,9 @@ import { useEffect, useState } from "react";
 export default function EditExpenseModal({
 
     expense,
-
     onClose,
-
     onSave,
+    onDelete,
 
 }) {
 
