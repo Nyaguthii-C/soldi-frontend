@@ -4,15 +4,20 @@ import { getMonthlySummary } from "./summaryService";
 
 export async function getDashboardData() {
 
-    const [budget, today, monthly] = await Promise.all([
+    const today = new Date();
+
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+
+    const [budget, todayExpenses, monthly] = await Promise.all([
         getBudget(),
         getTodayExpenses(),
-        getMonthlySummary(),
+        getMonthlySummary(year, month),
     ]);
 
     return {
         budget: budget.data,
-        today: today.data,
+        today: todayExpenses.data,
         monthly: monthly.data,
     };
 }
