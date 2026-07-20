@@ -120,10 +120,9 @@ export default function Dashboard() {
             <EditExpenseModal
 
                 expense={selectedExpense}
-
                 onClose={() => setSelectedExpense(null)}
-
                 onSave={saveExpense}
+                onDelete={deleteExpense}
 
             />
 
