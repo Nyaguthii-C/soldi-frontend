@@ -1,8 +1,12 @@
-export default function ExpenseItem({ expense }) {
+export default function ExpenseItem({ expense, onClick }) {
 
     return (
 
-        <div className="card mb-3 border-0 shadow-sm">
+        <div
+            className="card mb-3 border-0 shadow-sm expense-card"
+            role="button"
+            onClick={() => onClick(expense)}
+        >
 
             <div className="card-body">
 
@@ -11,25 +15,19 @@ export default function ExpenseItem({ expense }) {
                     <div>
 
                         <h6 className="mb-1">
-
                             {expense.description}
-
                         </h6>
 
-                        <small className="text-muted">
-
+                        <small className="badge bg-primary">
                             {expense.category}
-
                         </small>
 
                     </div>
 
-                    <div className="text-end">
+                    <div>
 
                         <strong>
-
                             KES {Number(expense.amount).toLocaleString()}
-
                         </strong>
 
                     </div>

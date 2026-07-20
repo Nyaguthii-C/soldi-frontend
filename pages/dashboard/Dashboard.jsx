@@ -1,32 +1,11 @@
-// import MainLayout from "../../components/layout/MainLayout";
-
-// export default function Dashboard(){
-
-// return(
-
-// <MainLayout>
-
-// <h2>
-
-// Dashboard
-
-// </h2>
-
-// </MainLayout>
-
-// )
-
-// }
-
 import { useEffect, useState } from "react";
-
 import TodayExpenses from "../../components/dashboard/TodayExpenses";
 import MainLayout from "../../components/layout/MainLayout";
 import BudgetCard from "../../components/dashboard/BudgetCard";
 import QuickExpense from "../../components/dashboard/QuickExpense";
-
-
 import { getDashboardData } from "../../services/dashboardService";
+import EditExpenseModal from "../../components/dashboard/EditExpenseModal";
+import { updateExpenseById, deleteExpenseById } from "../../services/expenseService";
 
 export default function Dashboard() {
 
@@ -40,7 +19,9 @@ export default function Dashboard() {
 
         return "Good Evening";
 
-    };    
+    };
+
+    const [selectedExpense, setSelectedExpense] = useState(null);   
 
     const [dashboard, setDashboard] = useState(null);
 
@@ -65,6 +46,32 @@ export default function Dashboard() {
         }
 
     }
+
+    async function saveExpense(data) {
+
+        await updateExpenseById(
+
+            selectedExpense.id,
+
+            data
+
+        );
+
+        setSelectedExpense(null);
+
+        loadDashboard();
+
+    }
+
+    async function deleteExpense(id) {
+
+        await deleteExpenseById(id);
+
+        setSelectedExpense(null);
+
+        loadDashboard();
+
+    }    
 
     useEffect(() => {
 
@@ -107,6 +114,17 @@ export default function Dashboard() {
 
             <TodayExpenses
                 expenses={dashboard.today}
+                onEdit={setSelectedExpense}
+            />
+
+            <EditExpenseModal
+
+                expense={selectedExpense}
+
+                onClose={() => setSelectedExpense(null)}
+
+                onSave={saveExpense}
+
             />
 
         </MainLayout>

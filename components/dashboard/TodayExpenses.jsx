@@ -1,6 +1,6 @@
 import ExpenseItem from "./ExpenseItem";
 
-export default function TodayExpenses({ expenses }) {
+export default function TodayExpenses({ expenses, onEdit }) {
 
     return (
 
@@ -27,11 +27,9 @@ export default function TodayExpenses({ expenses }) {
                     expenses.map(expense => (
 
                         <ExpenseItem
-
                             key={expense.id}
-
                             expense={expense}
-
+                            onClick={onEdit}
                         />
 
                     ))
