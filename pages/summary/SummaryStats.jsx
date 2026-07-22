@@ -14,17 +14,8 @@ export default function SummaryStats({
 
                     <div className="card-body text-center">
 
-                        <div className="fs-2">
-
-                            💰
-
-                        </div>
-
-                        <small>
-
-                            Budget
-
-                        </small>
+                        {/* <div className="fs-2">💰</div> */}
+                        <small> Budget </small>
 
                         <h4>
 
@@ -50,17 +41,9 @@ export default function SummaryStats({
 
                     <div className="card-body text-center">
 
-                        <div className="fs-2">
+                        {/* <div className="fs-2">📉</div> */}
 
-                            📉
-
-                        </div>
-
-                        <small>
-
-                            Spent
-
-                        </small>
+                        <small> Spent </small>
 
                         <h4 className="text-danger">
 
@@ -86,17 +69,9 @@ export default function SummaryStats({
 
                     <div className="card-body text-center">
 
-                        <div className="fs-2">
+                        {/* <div className="fs-2">✅</div> */}
 
-                            ✅
-
-                        </div>
-
-                        <small>
-
-                            Remaining
-
-                        </small>
+                        <small> Remaining </small>
 
                         <h4 className="text-success">
 

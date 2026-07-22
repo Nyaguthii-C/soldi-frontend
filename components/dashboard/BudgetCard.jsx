@@ -10,7 +10,7 @@ export default function BudgetCard({ budget, monthly }) {
 
                     <div className="card-body text-center">
 
-                        <div className="fs-2">💰</div>
+                        {/* <div className="fs-2"></div> */}
 
                         <small className="text-muted">
 
@@ -40,7 +40,7 @@ export default function BudgetCard({ budget, monthly }) {
 
                     <div className="card-body text-center">
 
-                        <div className="fs-2">📉</div>
+                        {/* <div className="fs-2"></div> */}
 
                         <small className="text-muted">
 
@@ -70,7 +70,7 @@ export default function BudgetCard({ budget, monthly }) {
 
                     <div className="card-body text-center">
 
-                        <div className="fs-2">✅</div>
+                        {/* <div className="fs-2">✅</div> */}
 
                         <small className="text-muted">
 

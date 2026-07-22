@@ -4,27 +4,40 @@ export default function Navbar(){
 
     const { user } = useAuth();
 
+
+    const greeting = () => {
+
+        const hour = new Date().getHours();
+
+        if (hour < 12) return "Good Morning";
+
+        if (hour < 18) return "Good Afternoon";
+
+        return "Good Evening";
+
+    };
+
     return(
 
-<nav className="navbar bg-white shadow-sm">
+        <nav className="navbar bg-white shadow-sm">
 
-<div className="container">
+            <div className="container">
 
-<span className="navbar-brand">
+                <span className="navbar-brand">
 
-Soldi Expense Tracker
+                    Soldi
 
-</span>
+                </span>
 
-<span>
+                <span>
 
-{user?.user?.username || user?.username}
+                    {greeting()}   {user?.user?.username || user?.username}
 
-</span>
+                </span>
 
-</div>
+            </div>
 
-</nav>
+        </nav>
 
     );
 

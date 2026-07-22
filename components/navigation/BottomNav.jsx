@@ -1,40 +1,43 @@
 import { NavLink } from "react-router-dom";
+import LogoutButton from "../common/LogoutButton";
 
 export default function BottomNav() {
 
     return (
 
-<nav className="navbar bg-white border-top fixed-bottom">
+        <nav className="navbar bg-white border-top fixed-bottom">
 
-<div className="container justify-content-around">
+        <div className="container justify-content-around">
 
-<NavLink to="/dashboard">
+        <NavLink to="/dashboard">
 
-🏠
+            🏠
 
-</NavLink>
+        </NavLink>
 
-<NavLink to="/expenses">
+        <NavLink to="/expenses">
 
-💳
+            💳
 
-</NavLink>
+        </NavLink>
 
-<NavLink to="/reports">
+        <NavLink to="/summary">
 
-📊
+            📊
 
-</NavLink>
+        </NavLink>
 
-<NavLink to="/profile">
+        <NavLink to="/profile">
 
-👤
+            👤
 
-</NavLink>
+        </NavLink>
 
-</div>
+        <LogoutButton className="btn btn-outline-danger btn-sm" />
 
-</nav>
+        </div>
+
+        </nav>
 
     );
 

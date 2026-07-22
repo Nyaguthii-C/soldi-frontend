@@ -9,10 +9,17 @@ export default function MainLayout({ children }) {
 
             <Navbar/>
 
-            <main className="container py-4 flex-grow-1">
+            {/* <main className="container py-4 flex-grow-1">
 
                 {children}
 
+            </main> */}
+
+            <main
+                className="container py-4 flex-grow-1"
+                style={{ paddingBottom: "90px" }}
+            >
+                {children}
             </main>
 
             <BottomNav/>
