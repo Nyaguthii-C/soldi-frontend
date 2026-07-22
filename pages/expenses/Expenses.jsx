@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import MainLayout from "../../components/layout/MainLayout";
-// import MainLayout from "../../components/layout/MainLayout";
 import ExpenseItem from "../../components/dashboard/ExpenseItem";
 import EditExpenseModal from "../../components/dashboard/EditExpenseModal";
 
@@ -16,7 +15,7 @@ export default function Expenses() {
     const [expenses, setExpenses] = useState([]);
 
     const [selectedExpense, setSelectedExpense] = useState(null);
-    
+    const [search, setSearch] = useState("");
 
     async function loadExpenses() {
 
@@ -75,7 +74,35 @@ export default function Expenses() {
 
             </h2>
 
-            {expenses.map(expense => (
+            <input
+
+                className="form-control mb-4"
+
+                placeholder="Search expenses..."
+
+                value={search}
+
+                onChange={(e)=>setSearch(e.target.value)}
+
+            />
+
+            {expenses
+
+                .filter(expense =>
+
+                expense.description
+
+                .toLowerCase()
+
+                .includes(
+
+                search.toLowerCase()
+
+                )
+
+                )
+
+                .map(expense => (
 
                 <ExpenseItem
                     key={expense.id}
