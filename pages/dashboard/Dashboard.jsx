@@ -2,24 +2,24 @@ import { useEffect, useState } from "react";
 import TodayExpenses from "../../components/dashboard/TodayExpenses";
 import MainLayout from "../../components/layout/MainLayout";
 import BudgetCard from "../../components/dashboard/BudgetCard";
-import QuickExpense from "../../components/dashboard/QuickExpense";
+import AddExpense from "../../components/dashboard/AddExpense";
 import { getDashboardData } from "../../services/dashboardService";
 import EditExpenseModal from "../../components/dashboard/EditExpenseModal";
 import { updateExpenseById, deleteExpenseById } from "../../services/expenseService";
 
 export default function Dashboard() {
 
-    const greeting = () => {
+    // const greeting = () => {
 
-        const hour = new Date().getHours();
+    //     const hour = new Date().getHours();
 
-        if (hour < 12) return "Good Morning";
+    //     if (hour < 12) return "Good Morning";
 
-        if (hour < 18) return "Good Afternoon";
+    //     if (hour < 18) return "Good Afternoon";
 
-        return "Good Evening";
+    //     return "Good Evening";
 
-    };
+    // };
 
     const [selectedExpense, setSelectedExpense] = useState(null);   
 
@@ -97,18 +97,18 @@ export default function Dashboard() {
 
         <MainLayout>
 
-            <h2 className="mb-0">
+            {/* <h2 className="mb-0">
 
                 {greeting()} 👋
 
-            </h2>
+            </h2> */}
 
-            <BudgetCard
+            {/* <BudgetCard
                 budget={dashboard.budget}
                 monthly={dashboard.monthly}
-            />
+            /> */}
 
-            <QuickExpense
+            <AddExpense
                 onSuccess={loadDashboard}
             />
 
