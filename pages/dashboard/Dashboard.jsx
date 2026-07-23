@@ -6,20 +6,22 @@ import AddExpense from "../../components/dashboard/AddExpense";
 import { getDashboardData } from "../../services/dashboardService";
 import EditExpenseModal from "../../components/dashboard/EditExpenseModal";
 import { updateExpenseById, deleteExpenseById } from "../../services/expenseService";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function Dashboard() {
 
-    // const greeting = () => {
+    const {user} = useAuth();
+    const greeting = () => {
 
-    //     const hour = new Date().getHours();
+        const hour = new Date().getHours();
 
-    //     if (hour < 12) return "Good Morning";
+        if (hour < 12) return "Good Morning";
 
-    //     if (hour < 18) return "Good Afternoon";
+        if (hour < 18) return "Good Afternoon";
 
-    //     return "Good Evening";
+        return "Good Evening";
 
-    // };
+    };
 
     const [selectedExpense, setSelectedExpense] = useState(null);   
 
@@ -99,14 +101,17 @@ export default function Dashboard() {
 
             {/* <h2 className="mb-0">
 
-                {greeting()} 👋
+                {greeting()} 
 
             </h2> */}
 
-            {/* <BudgetCard
-                budget={dashboard.budget}
-                monthly={dashboard.monthly}
-            /> */}
+
+        <div className="mb-4 p-4 rounded-lg shadow-sm card">
+            <h4 className="mb-1 text-2xl font-bold">
+            {greeting()} {user?.user?.username || user?.username}
+            </h4>
+  
+        </div>
 
             <AddExpense
                 onSuccess={loadDashboard}
