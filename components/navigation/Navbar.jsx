@@ -1,40 +1,24 @@
 import { useAuth } from "../../contexts/AuthContext";
+import { NavLink } from "react-router-dom";
+import ThemeToggle from "../common/ThemeToggle";
+
 
 export default function Navbar(){
 
-    const { user } = useAuth();
-
-
-    const greeting = () => {
-
-        const hour = new Date().getHours();
-
-        if (hour < 12) return "Good Morning";
-
-        if (hour < 18) return "Good Afternoon";
-
-        return "Good Evening";
-
-    };
-
     return(
 
-        <nav className="navbar bg-white shadow-sm">
+        <nav className="navbar shadow-sm">
 
             <div className="container">
 
-                <span className="navbar-brand">
-
-                    Soldi
-
-                </span>
-
+                <span className="navbar-brand font-bold"> SOLDI Tracker </span>
                 <span>
-
-                    {greeting()}   {user?.user?.username || user?.username}
-
+                    <NavLink to="/profile"> <i className="bi bi-person-fill"></i> </NavLink>
                 </span>
-
+                <span> 
+                    <ThemeToggle />
+                </span>
+            
             </div>
 
         </nav>

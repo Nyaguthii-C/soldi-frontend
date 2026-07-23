@@ -4,38 +4,14 @@ export default function BottomNav() {
 
     return (
 
-        <nav className="navbar bg-white border-top fixed-bottom">
-
-        <div className="container justify-content-around">
-
-        <NavLink to="/dashboard">
-
-            🏠
-
-        </NavLink>
-
-        <NavLink to="/expenses">
-
-            💳
-
-        </NavLink>
-
-        <NavLink to="/summary">
-
-            📊
-
-        </NavLink>
-
-        <NavLink to="/profile">
-
-            👤
-
-        </NavLink>
-
-        </div>
-
+        <nav className="navbar border-top fixed-bottom">
+            <div className="container justify-content-around">
+                <NavLink to="/dashboard"> <i className="bi bi-house-fill"></i> </NavLink>
+                <NavLink to="/expenses"> <i className="bi bi-wallet-fill"> </i></NavLink>
+                <NavLink to="/summary"> <i className="bi bi-bar-chart-fill"></i></NavLink>
+                <NavLink to="/profile"> <i className="bi bi-person-fill"></i> </NavLink>
+            </div>
         </nav>
-
     );
 
 }
