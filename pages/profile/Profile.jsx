@@ -2,98 +2,66 @@ import { useEffect, useState } from "react";
 import MainLayout from "../../components/layout/MainLayout";
 import TextInput from "../../components/forms/TextInput";
 import {getProfile, updateProfile,} from "../../services/profileService";
-
+import LogoutButton from "../../components/common/LogoutButton";
 
 export default function Profile() {
 
     const [profile, setProfile] = useState(null);
-
     const [saving, setSaving] = useState(false);
 
     async function loadProfile() {
 
         try {
-
             const response = await getProfile();
-
             setProfile(response.data);
-
         }
 
         catch(error){
-
             console.error(error);
-
         }
 
     }
 
     useEffect(() => {
-
         loadProfile();
-
     }, []);
 
     function handleChange(e){
-
         setProfile({
-
             ...profile,
-
             [e.target.name]: e.target.value,
-
         });
 
     }
 
     async function handleSubmit(e){
-
         e.preventDefault();
-
         setSaving(true);
-
         try{
-
             await updateProfile({
-
                 monthly_limit: profile.monthly_limit,
-
                 currency: profile.currency,
-
             });
-
             alert("Profile updated successfully.");
-
         }
 
         catch(error){
-
             console.error(error);
-
             alert("Unable to update profile.");
-
         }
 
         finally{
-
             setSaving(false);
-
         }
 
     }
 
     if(!profile){
-
         return(
-
             <MainLayout>
-
                 Loading...
-
             </MainLayout>
-
         );
-
     }
 
     return(
@@ -160,6 +128,7 @@ export default function Profile() {
                                     {saving ? "Saving..." : "Save Changes"}
                                 </button>
 
+                                <LogoutButton className="btn btn-outline-danger btn-sm" />
                             </form>
 
                         </div>

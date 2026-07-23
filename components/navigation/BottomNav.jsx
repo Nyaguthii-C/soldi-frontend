@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import LogoutButton from "../common/LogoutButton";
 
 export default function BottomNav() {
 
@@ -32,8 +31,6 @@ export default function BottomNav() {
             👤
 
         </NavLink>
-
-        <LogoutButton className="btn btn-outline-danger btn-sm" />
 
         </div>
 
