@@ -4,8 +4,9 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(7, 182, 45, 0.87);
+  /* background-color: #242424; */
+  background-color: #6af19e;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,17 +16,18 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #0cad27;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #6af19e;
 }
 
 body {
   margin: 0;
   display: flex;
   place-items: center;
+  /* min-width: 320px; */
   min-width: 320px;
   min-height: 100vh;
 }

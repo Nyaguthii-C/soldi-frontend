@@ -7,7 +7,7 @@ export default function Navbar(){
 
     return(
 
-        <nav className="navbar shadow-sm">
+        <nav className="navbar border-bottom shadow-sm">
 
             <div className="container">
 

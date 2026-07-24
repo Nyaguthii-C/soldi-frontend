@@ -4,7 +4,7 @@ export default function BottomNav() {
 
     return (
 
-        <nav className="navbar border-top fixed-bottom">
+        <nav className="navbar border-top fixed-bottom shadow-sm">
             <div className="container justify-content-around">
                 <NavLink to="/dashboard"> <i className="bi bi-house-fill"></i> </NavLink>
                 <NavLink to="/expenses"> <i className="bi bi-wallet-fill"> </i></NavLink>
