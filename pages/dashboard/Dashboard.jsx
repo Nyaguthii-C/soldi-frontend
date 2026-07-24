@@ -106,8 +106,8 @@ export default function Dashboard() {
             </h2> */}
 
 
-        <div className="mb-4 p-4 rounded-lg shadow-sm card">
-            <h4 className="mb-1 text-2xl font-bold">
+        <div className="mb-4 p-4 shadow-sm card">
+            <h4 className="mb-1">
             {greeting()} {user?.user?.username || user?.username}
             </h4>
   
